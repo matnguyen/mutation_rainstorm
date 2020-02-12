@@ -19,7 +19,6 @@ import skmisc.loess as loess
 import time
 import math
 import traceback
-from cyvcf2 import VCF
 
 pd.options.mode.chained_assignment = None
 
@@ -512,5 +511,5 @@ if __name__ == '__main__':
         all_counted = pd.DataFrame({'mutrate': mutrate, 'unadj': unadj, 'position': positions, 'patient': patients,
                                     'mutdiff': mutdiff})
         filename = "{0}_rainstorm_k_{1}_mean_{2}.tsv".format(param.output_base_name, param.off_by, chrom)
-        all_counted.to_csv(filename, sep='\t', )
+        all_counted.to_csv(filename, sep='\t', index=False)
         # plotRainstorm(allcounted,gsub(".tsv",".pdf",filen));
